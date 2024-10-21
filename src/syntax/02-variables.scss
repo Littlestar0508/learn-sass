@@ -1,0 +1,38 @@
+$base-color: #bf2243;
+$border-color: rgba($base-color, 0.7);
+$variable: 1rem;
+
+.alert {
+  border: 1px solid $border_color; // ←
+}
+
+:root {
+  --primary-color: red;
+}
+
+$color: #a1ed5e;
+.rule-1 {
+  $variable: 2rem !global;
+
+  padding: $variable;
+  color: $color;
+  background-color: var(--primary-color);
+}
+
+$base-color: #cdea2a !default;
+
+:root {
+  --primary-color: blue;
+}
+
+:root {
+  --primary-color: yellow;
+}
+
+$color: #8780ea;
+.rule-2 {
+  margin: $variable;
+
+  color: $base-color;
+  background-color: var(--primary-color);
+}
