@@ -1,0 +1,33 @@
+@mixin size($width, $height: null) {
+  width: $width;
+  inline-size: $width;
+
+  @if ($height != null) {
+    height: $height;
+    block-size: $height;
+  }
+}
+
+.combo-ui {
+  margin-block: 50px;
+  @include size(113px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid #757575;
+  border-radius: 5px;
+}
+
+.icon {
+  @include size(16px, 16px);
+  margin-inline: 10px;
+}
+
+.combo-select {
+  color: #757575;
+  font-weight: 600;
+  @include size(200px);
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+}
