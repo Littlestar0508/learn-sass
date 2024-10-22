@@ -1,0 +1,23 @@
+// 가로 크기와, 세로 크기를 설정하는 mixin
+// inline-size , block-size
+@mixin inline-size($value) {
+  width: $value;
+  inline-size: $value;
+}
+
+@mixin block-size($value) {
+  height: $value;
+  block-size: $value;
+}
+
+@mixin size($width, $height: null) {
+  @include inline-size($width);
+
+  @if (height != null) {
+    @include block-size($height);
+  } @else {
+    @include block-size($width);
+  }
+}
+
+//
