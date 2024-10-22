@@ -1,0 +1,13 @@
+@use "sass:math";
+
+@function removeUnit($valueF) {
+  @return math.div($valueF, ($valueF * 0 + 1));
+}
+
+@function rem($valueF, $base: 16) {
+  @return math.div(removeUnit($valueF), $base) * 1rem;
+}
+
+@function em($valueF, $base) {
+  @return math.div(removeUnit($valueF), removeUnit($base)) * 1em;
+}
