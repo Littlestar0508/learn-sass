@@ -1,0 +1,12 @@
+:root {
+  color-scheme: light dark;
+}
+
+.box {
+  width: 50px;
+  inline-size: 50px;
+  height: 100px;
+  block-size: 100px;
+}
+
+/*# sourceMappingURL=test.css.map */
