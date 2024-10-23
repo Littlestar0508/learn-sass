@@ -5,6 +5,8 @@
 .combobox {
   $light-text-color: $secondary-color;
   $dark-text-color: $accent-color;
+  $font-mobile: $text-sm;
+  $font-desktop: $text-lg;
 
   color: light-dark($light-text-color, $dark-text-color);
 
@@ -12,47 +14,41 @@
   display: inline-flex;
   // flex-flow: row nowrap;
   // align-items: center;
-  // padding: 6px 16px;
-  border-radius: 16px;
-  position: relative;
-  font-size: 14px;
+  // display: inline-flex;
+  // position: relative;
+  @include rounded(md);
+  @include relative-container(svg);
+  font-size: $font-mobile;
 
   @media (min-width: 1024px) {
-    font-size: 18px;
+    font-size: $font-desktop;
   }
 
   svg {
-    position: absolute;
-    top: 50%;
-    translate: 0 -50%;
+    // position: absolute;
+    // top: 50%;
+    // inset-block-start: 50%;
+    // translate: 0 -50%;
     pointer-events: none;
 
     &:nth-of-type(1) {
-      left: 8px;
+      left: $spacing-sm;
     }
 
     &:nth-of-type(2) {
-      right: 8px;
+      right: $spacing-sm;
     }
   }
 
   label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    border: 0;
-    clip: rect(0 0 0 0);
+    @include a11y-hidden;
   }
 
   select {
     color: inherit;
     appearance: none;
     border: 0;
-    padding: 0 24px;
+    padding: $spacing-base $spacing-5xl;
     background-color: transparent;
   }
 }
