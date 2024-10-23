@@ -3,7 +3,11 @@
 @use "../abstracts" as *;
 
 .combobox {
-  color: $tertiary-color;
+  $light-text-color: $secondary-color;
+  $dark-text-color: $accent-color;
+
+  color: light-dark($light-text-color, $dark-text-color);
+
   border: 1px solid currentColor;
   display: inline-flex;
   // flex-flow: row nowrap;
